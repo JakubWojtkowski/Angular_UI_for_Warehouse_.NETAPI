@@ -1,0 +1,24 @@
+<div class="container my-5">
+  <h1 class="mb-3">Warehouses</h1>
+
+  <table class="table" *ngIf="warehouses && warehouses.length > 0">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Addres</th>
+        <th>Co-ordinates</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let warehouse of warehouses">
+        <td>{{ warehouse.id }}</td>
+        <td>{{ warehouse.name }}</td>
+        <td>{{ warehouse.address }}</td>
+        <td>{{ warehouse.coOrdinates }}</td>
+        <td><a [routerLink]="['/warehouses', 'edit', warehouse.id]">Edit</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <p *ngIf="!warehouses || warehouses.length <= 0">No warehouses found.</p>
+</div>

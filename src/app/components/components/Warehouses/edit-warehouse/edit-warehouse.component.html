@@ -1,0 +1,44 @@
+<div class="container my-5">
+  <h1 class="mb-4">Edit Warehouse</h1>
+
+  <div class="row">
+    <div class="col-6">
+
+      <form #form="ngForm" (ngSubmit)="updateWarehouse()">
+        <div class="mb-3">
+
+          <label for="id">Id</label>
+          <input type="text" class="form-control" id="id" readonly name="id"
+           [(ngModel)]="warehouseDetails.id">
+        </div>
+
+        <div class="mb-3">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" name="name"
+           [(ngModel)]="warehouseDetails.name"
+          placeholder="Enter name">
+        </div>
+
+        <div class="mb-3">
+          <label for="address">Address</label>
+          <input type="text" class="form-control" id="address" name="address"
+           [(ngModel)]="warehouseDetails.address"
+          placeholder="Enter address">
+        </div>
+
+        <div class="mb-3">
+          <label for="coOrdinates">Co-ordinates</label>
+          <input type="text" class="form-control" id="coOrdinates" name="coOrdinates"
+          [(ngModel)]="warehouseDetails.coOrdinates"
+          placeholder="Enter coordinates">
+        </div>
+
+        <button type="submit" class="btn btn-primary mr-5">Save</button>
+        <button type="button" class="btn btn-danger"
+         (click)="deleteWarehouse(warehouseDetails.id)">Delete</button>
+      </form>
+
+    </div>
+  </div>
+
+</div>

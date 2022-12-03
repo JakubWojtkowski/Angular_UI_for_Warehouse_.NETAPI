@@ -1,0 +1,29 @@
+<div class="container my-5">
+  <h1 class="mb-3">Deliveries</h1>
+
+  <table class="table" *ngIf="deliveries && deliveries.length > 0">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Date of delivery</th>
+        <th>Delivery mass</th>
+        <th>Warehouse Id</th>
+        <th>Placement time</th>
+        <th>Receive time</th>
+        <th> </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let delivery of deliveries">
+        <td>{{ delivery.id }}</td>
+        <td>{{ delivery.dateOfDelivery }}</td>
+        <td>{{ delivery.deliveryMass }}</td>
+        <td>{{ delivery.warehouseId }}</td>
+        <td>{{ delivery.placementTime }}</td>
+        <td>{{ delivery.receiveTime }}</td>
+        <td><a [routerLink]="['/deliveries', 'edit', delivery.id]">Edit</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <p *ngIf ="!deliveries || deliveries.length <= 0">No deliveries found.</p>
+</div>
